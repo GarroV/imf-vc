@@ -47,7 +47,7 @@ test.describe('с фикстурой плана', () => {
   test('прямая ссылка на карточку открывает её', async ({ page }) => {
     await page.goto('./#meridius');
     await expect(page.locator('#card-meridius')).toBeVisible();
-    await expect(page.locator('#card-meridius [data-link]')).toHaveText('https://meridius.95-111-249-216.sslip.io');
+    await expect(page.locator('#card-meridius [data-link]')).toHaveText('https://meridius.vasiliy-garro.workers.dev');
   });
 
   test('у проекта без доски в Swarm нет плана, «уточняется» не осталось', async ({ page }) => {
