@@ -39,8 +39,8 @@ login_steps:
     en: Open the link and sign in with Google using your work email, or with your username and password. Ratings are under “Ratings” in the menu.
   - ru: Чтобы проводить проверки, попросите добавить ваш Telegram в список приглашённых бота, затем откройте бота @dodo_as_bot по второй ссылке и отправьте /start.
     en: To run audits, ask for your Telegram account to be added to the bot’s invite list, then open the @dodo_as_bot bot from the second link and send /start.
-  - ru: Когда проверка начата, под сообщением бота есть кнопка «Обход точки» — мини-апп с зонами, чек-листом и записью нарушений. Вести проверку можно и в нём, и в чате с ботом.
-    en: Once an audit has started, the bot message has a “Walk-through” button — a mini app with zones, the checklist and recording of findings. You can run the audit there or in the bot chat.
+  - ru: У поля ввода в боте есть кнопка «Приложение» — мини-апп аудитора. Идёт проверка — открывается обход с зонами, чек-листом и записью нарушений, иначе главная; там же настройки (язык, подключение Claude). Начать проверку — /start в чате; вести её можно и в приложении, и в чате.
+    en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; settings (language, connecting Claude) are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
 demo: none               # демо только локальное (docker compose --profile demo)
 sources:
   - GarroV/decimus README.md («Что уже работает», «Где живёт»)
@@ -48,7 +48,7 @@ sources:
   - GarroV/decimus docs/08-deploy.md (§8, прод на VPS)
   - GarroV/decimus docs/12-web-admin.md
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
-  - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326)
+  - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
   - dotfiles docs/landscape.md
   - GarroV/decimus progress.md (имя бота @dodo_as_bot) и getMe бота на VPS
   - "владелец, 28.09.2026: статус — в разработке"
