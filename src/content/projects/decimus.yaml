@@ -14,11 +14,11 @@ kind:
   ru: Telegram-бот и мини-апп · веб-админка · MCP
   en: Telegram bot and mini app · web admin · MCP
 summary:
-  ru: Выездные проверки пиццерий. Аудитор ведёт проверку в боте или в мини-аппе обхода прямо в Telegram, движок считает оценку и собирает PDF-отчёт и письмо партнёру.
-  en: On-site pizzeria audits. The auditor runs the audit in a bot or in the walk-through mini app inside Telegram; the engine scores it and builds a PDF report and a letter to the partner.
+  ru: Выездные проверки пиццерий и рейтинги IMF. Аудитор ведёт проверку в боте или в мини-аппе обхода прямо в Telegram, движок считает оценку и собирает PDF-отчёт и письмо партнёру. В веб-админке — раздел «Рейтинги» с РС и РКО по странам IMF вместо Google-таблиц.
+  en: On-site pizzeria audits and IMF ratings. The auditor runs the audit in a bot or in the walk-through mini app inside Telegram; the engine scores it and builds a PDF report and a letter to the partner. The web admin has a Ratings section — standards and customer-experience ratings by IMF country, replacing the Google Sheets.
 audience:
-  ru: Аудиторы — в боте и мини-аппе; управляющая компания — в веб-админке
-  en: Auditors in the bot and mini app; the management company in the web admin
+  ru: Аудиторы — в боте и мини-аппе; управляющая компания и контролинг — в веб-админке
+  en: Auditors in the bot and mini app; the management company and controlling in the web admin
 runs_on:
   ru: Telegram и веб
   en: Telegram and the web
@@ -35,8 +35,8 @@ extra_links:
 login_steps:
   - ru: Попросите владельца проекта завести вам учётную запись веб-админки — самостоятельной регистрации нет.
     en: Ask the project owner to create a web admin account for you — there is no self-sign-up.
-  - ru: Откройте ссылку и войдите по логину и паролю.
-    en: Open the link and sign in with your username and password.
+  - ru: Откройте ссылку и войдите через Google рабочей почтой или по логину и паролю. Рейтинги — пункт «Рейтинги» в меню.
+    en: Open the link and sign in with Google using your work email, or with your username and password. Ratings are under “Ratings” in the menu.
   - ru: Чтобы проводить проверки, попросите добавить ваш Telegram в список приглашённых бота, затем откройте бота @dodo_as_bot по второй ссылке и отправьте /start.
     en: To run audits, ask for your Telegram account to be added to the bot’s invite list, then open the @dodo_as_bot bot from the second link and send /start.
   - ru: Когда проверка начата, под сообщением бота есть кнопка «Обход точки» — мини-апп с зонами, чек-листом и записью нарушений. Вести проверку можно и в нём, и в чате с ботом.
@@ -47,6 +47,7 @@ sources:
   - GarroV/decimus docs/06-mvp-bot.md (доступ к боту по приглашению)
   - GarroV/decimus docs/08-deploy.md (§8, прод на VPS)
   - GarroV/decimus docs/12-web-admin.md
+  - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326)
   - dotfiles docs/landscape.md
   - GarroV/decimus progress.md (имя бота @dodo_as_bot) и getMe бота на VPS
