@@ -35,20 +35,20 @@ extra_links:
 login_steps:
   - ru: Попросите владельца проекта завести вам учётную запись веб-админки — самостоятельной регистрации нет.
     en: Ask the project owner to create a web admin account for you — there is no self-sign-up.
-  - ru: Откройте ссылку и войдите через Google рабочей почтой или по логину и паролю. Рейтинги — пункт «Рейтинги» в меню.
-    en: Open the link and sign in with Google using your work email, or with your username and password. Ratings are under “Ratings” in the menu.
-  - ru: Чтобы проводить проверки, попросите добавить ваш Telegram в список приглашённых бота, затем откройте бота @dodo_as_bot по второй ссылке и отправьте /start.
-    en: To run audits, ask for your Telegram account to be added to the bot’s invite list, then open the @dodo_as_bot bot from the second link and send /start.
-  - ru: У поля ввода в боте есть кнопка «Приложение» — мини-апп аудитора. Идёт проверка — открывается обход с зонами, чек-листом и записью нарушений, иначе главная; там же настройки (язык, подключение Claude). Начать проверку — /start в чате; вести её можно и в приложении, и в чате.
-    en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; settings (language, connecting Claude) are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
-  - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — в веб-админке «Пользователи» → ваша карточка → блок «Подключить Claude». Скопируйте адрес, добавьте его в Claude как свой коннектор, войдите своей учёткой decimus и нажмите «Разрешить». Claude получит права вашей роли; отключить — там же.
-    en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) — in the web admin open “Users” → your card → “Connect Claude”. Copy the address, add it in Claude as a custom connector, sign in with your decimus account and press “Allow”. Claude gets the rights of your role; disconnect in the same place.
+  - ru: Откройте ссылку и войдите. Если к учётке привязана рабочая почта Google — только кнопкой «Войти через Google» (вход паролем для таких учёток закрыт), иначе — логином и паролем. Рейтинги — пункт «Рейтинги» в меню.
+    en: Open the link and sign in. If a Google work email is linked to your account, use “Sign in with Google” (password sign-in is closed for such accounts); otherwise use your username and password. Ratings are under “Ratings” in the menu.
+  - ru: Всё подключение — в «Настройках» (аватар учётки внизу слева, на телефоне — вверху). Чтобы проводить проверки, там же нажмите «Привязать бота» и откройте ссылку в Telegram — бот @dodo_as_bot привяжется к вашей учётке. Доступ к боту есть у полевых ролей.
+    en: Everything you connect lives in “Settings” (your avatar at the bottom left, at the top on a phone). To run audits, press “Link the bot” there and open the link in Telegram — the @dodo_as_bot bot is linked to your account. The bot is open to field roles.
+  - ru: У поля ввода в боте есть кнопка «Приложение» — мини-апп аудитора. Идёт проверка — открывается обход с зонами, чек-листом и записью нарушений, иначе главная; там же настройки приложения. Начать проверку — /start в чате; вести её можно и в приложении, и в чате.
+    en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; the app settings are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
+  - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — «Настройки» → «Claude». Доступ никто не выдаёт — вы подключаете его сами, а что доступно в Claude, решает ваша роль. Отключение учётки или смена роли гасит доступ сразу.
+    en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) open “Settings” → “Claude”. Nobody grants access — you connect it yourself, and your role decides what Claude can do. Disabling the account or changing its role cuts access at once.
 demo: none               # демо только локальное (docker compose --profile demo)
 sources:
   - GarroV/decimus README.md («Что уже работает», «Где живёт»)
-  - GarroV/decimus docs/06-mvp-bot.md (доступ к боту по приглашению)
+  - GarroV/decimus docs/06-mvp-bot.md (доступ к боту — привязкой к учётке в «Настройках», D286, D448)
   - GarroV/decimus docs/08-deploy.md (§8, прод на VPS)
-  - GarroV/decimus docs/12-web-admin.md (блок «Подключить Claude» на своей карточке, на проде с 12.10.2026, D417)
+  - GarroV/decimus docs/12-web-admin.md (страница «Настройки», вход через Google для учёток с почтой — D447, D448, D450; на проде с 13.10.2026)
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
   - dotfiles docs/landscape.md
