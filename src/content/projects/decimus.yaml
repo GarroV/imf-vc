@@ -41,12 +41,14 @@ login_steps:
     en: To run audits, ask for your Telegram account to be added to the bot’s invite list, then open the @dodo_as_bot bot from the second link and send /start.
   - ru: У поля ввода в боте есть кнопка «Приложение» — мини-апп аудитора. Идёт проверка — открывается обход с зонами, чек-листом и записью нарушений, иначе главная; там же настройки (язык, подключение Claude). Начать проверку — /start в чате; вести её можно и в приложении, и в чате.
     en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; settings (language, connecting Claude) are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
+  - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — в веб-админке «Пользователи» → ваша карточка → блок «Подключить Claude». Скопируйте адрес, добавьте его в Claude как свой коннектор, войдите своей учёткой decimus и нажмите «Разрешить». Claude получит права вашей роли; отключить — там же.
+    en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) — in the web admin open “Users” → your card → “Connect Claude”. Copy the address, add it in Claude as a custom connector, sign in with your decimus account and press “Allow”. Claude gets the rights of your role; disconnect in the same place.
 demo: none               # демо только локальное (docker compose --profile demo)
 sources:
   - GarroV/decimus README.md («Что уже работает», «Где живёт»)
   - GarroV/decimus docs/06-mvp-bot.md (доступ к боту по приглашению)
   - GarroV/decimus docs/08-deploy.md (§8, прод на VPS)
-  - GarroV/decimus docs/12-web-admin.md
+  - GarroV/decimus docs/12-web-admin.md (блок «Подключить Claude» на своей карточке, на проде с 12.10.2026, D417)
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
   - dotfiles docs/landscape.md
