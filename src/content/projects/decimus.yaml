@@ -43,11 +43,15 @@ login_steps:
     en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; the app settings are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
   - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — «Настройки» → «Claude». Доступ никто не выдаёт — вы подключаете его сами, а что доступно в Claude, решает ваша роль. Отключение учётки или смена роли гасит доступ сразу.
     en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) open “Settings” → “Claude”. Nobody grants access — you connect it yourself, and your role decides what Claude can do. Disabling the account or changing its role cuts access at once.
-demo: none               # демо только локальное (docker compose --profile demo)
+demo:
+  url: https://decimus-demo.vasiliy-garro.workers.dev/demo   # открытое демо D524, сброс раз в час (decimus docs/08-deploy.md §8.21)
+  note:
+    ru: Вход без пароля с выбором роли, приложение аудитора без Telegram, RU/EN; данные выдуманные
+    en: No-password entry with a choice of role, the auditor app without Telegram, RU/EN; invented data
 sources:
   - GarroV/decimus README.md («Что уже работает», «Где живёт»)
   - GarroV/decimus docs/06-mvp-bot.md (доступ к боту — привязкой к учётке в «Настройках», D286, D448)
-  - GarroV/decimus docs/08-deploy.md (§8, прод на VPS)
+  - GarroV/decimus docs/08-deploy.md (§8, прод на VPS; §8.21 открытое демо, 18.10.2026)
   - GarroV/decimus docs/12-web-admin.md (страница «Настройки», вход через Google для учёток с почтой — D447, D448, D450; на проде с 13.10.2026)
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
