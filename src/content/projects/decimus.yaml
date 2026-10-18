@@ -17,8 +17,8 @@ summary:
   ru: Выездные проверки пиццерий и рейтинги IMF. Аудитор ведёт проверку в боте или в мини-аппе обхода прямо в Telegram, движок считает оценку и собирает PDF-отчёт и письмо партнёру. В веб-админке — раздел «Рейтинги» с РС и РКО по странам IMF вместо Google-таблиц.
   en: On-site pizzeria audits and IMF ratings. The auditor runs the audit in a bot or in the walk-through mini app inside Telegram; the engine scores it and builds a PDF report and a letter to the partner. The web admin has a Ratings section — standards and customer-experience ratings by IMF country, replacing the Google Sheets.
 audience:
-  ru: Аудиторы — в боте и мини-аппе; управляющая компания и контролинг — в веб-админке
-  en: Auditors in the bot and mini app; the management company and controlling in the web admin
+  ru: Аудиторы — в боте и мини-аппе; управляющая компания, контролинг и партнёры — в веб-админке
+  en: Auditors in the bot and mini app; the management company, controlling and partners in the web admin
 runs_on:
   ru: Telegram и веб
   en: Telegram and the web
@@ -41,6 +41,8 @@ login_steps:
     en: Everything you connect lives in “Settings” (your avatar at the bottom left, at the top on a phone). To run audits, press “Link the bot” there and open the link in Telegram — the @dodo_as_bot bot is linked to your account. The bot is open to field roles.
   - ru: У поля ввода в боте есть кнопка «Приложение» — мини-апп аудитора. Идёт проверка — открывается обход с зонами, чек-листом и записью нарушений, иначе главная; там же настройки приложения. Начать проверку — /start в чате; вести её можно и в приложении, и в чате.
     en: Next to the message field the bot has an “App” button — the auditor mini app. During an audit it opens the walk-through with zones, the checklist and recording of findings, otherwise the home screen; the app settings are there too. Start an audit with /start in the chat; you can run it in the app or in the chat.
+  - ru: "Посмотреть админку глазами партнёра — тестовая учётка partner: пространство тестового партнёра со страной Словения и четырьмя проверками с пометкой «ТЕСТ» (хорошая, средняя, плохая, очень плохая). Партнёр видит только свои пиццерии и проверки, экшн-планы и предписания; рейтинги — всей сети. Пароль — у владельца проекта."
+    en: "To see the admin as a partner sees it, use the test account partner: a test partner space with Slovenia and four inspections marked “ТЕСТ” (good, fair, poor, very poor). A partner sees only its own pizzerias and inspections, action plans and orders; ratings cover the whole network. Ask the project owner for the password."
   - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — «Настройки» → «Claude». Доступ никто не выдаёт — вы подключаете его сами, а что доступно в Claude, решает ваша роль. Отключение учётки или смена роли гасит доступ сразу.
     en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) open “Settings” → “Claude”. Nobody grants access — you connect it yourself, and your role decides what Claude can do. Disabling the account or changing its role cuts access at once.
 demo: none               # демо только локальное (docker compose --profile demo)
@@ -52,5 +54,6 @@ sources:
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
   - dotfiles docs/landscape.md
+  - "GarroV/decimus: тестовое пространство партнёра TEST (Словения) и учётка partner на проде, 15.10.2026 (D508, задача #870)"
   - GarroV/decimus progress.md (имя бота @dodo_as_bot) и getMe бота на VPS
   - "владелец, 28.09.2026: статус — в разработке"
