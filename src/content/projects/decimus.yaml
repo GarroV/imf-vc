@@ -33,6 +33,8 @@ extra_links:
       ru: Открыть бота
       en: Open the bot
 login_steps:
+  - ru: "Посмотреть продукт — в демо: откройте ссылку демо и выберите роль — админ управляющей компании, бизнес-девелопер, админ партнёра или наблюдатель. Пароля нет, проверки и люди в демо выдуманы, данные сами возвращаются к исходным раз в час."
+    en: "To see the product, use the demo: open the demo link and pick a role — management company admin, business developer, partner admin or observer. No password; the inspections and people in it are invented, and the data resets every hour."
   - ru: Попросите владельца проекта завести вам учётную запись веб-админки — самостоятельной регистрации нет.
     en: Ask the project owner to create a web admin account for you — there is no self-sign-up.
   - ru: Откройте ссылку и войдите. Если к учётке привязана рабочая почта Google — только кнопкой «Войти через Google» (вход паролем для таких учёток закрыт), иначе — логином и паролем. Рейтинги — пункт «Рейтинги» в меню.
@@ -45,7 +47,11 @@ login_steps:
     en: "To see the admin as a partner sees it, use the test account partner: a test partner space with Slovenia and four inspections marked “ТЕСТ” (good, fair, poor, very poor). A partner sees only its own pizzerias and inspections, action plans and orders; ratings cover the whole network. Ask the project owner for the password."
   - ru: Подключить Claude (claude.ai, Desktop, телефон, Claude Code) — «Настройки» → «Claude». Доступ никто не выдаёт — вы подключаете его сами, а что доступно в Claude, решает ваша роль. Отключение учётки или смена роли гасит доступ сразу.
     en: To connect Claude (claude.ai, Desktop, mobile, Claude Code) open “Settings” → “Claude”. Nobody grants access — you connect it yourself, and your role decides what Claude can do. Disabling the account or changing its role cuts access at once.
-demo: none               # демо только локальное (docker compose --profile demo)
+demo:
+  url: https://decimus-demo.vasiliy-garro.workers.dev/demo   # D524: отдельный стенд на VPS, 19.10.2026 отвечает 200 выбором роли
+  note:
+    ru: Без пароля, выбор роли, данные выдуманные, сбрасываются раз в час
+    en: No password, pick a role, invented data, resets every hour
 sources:
   - GarroV/decimus README.md («Что уже работает», «Где живёт»)
   - GarroV/decimus docs/06-mvp-bot.md (доступ к боту — привязкой к учётке в «Настройках», D286, D448)
@@ -54,6 +60,7 @@ sources:
   - GarroV/decimus docs/15-ratings.md (раздел «Рейтинги», на проде с 09.10.2026)
   - GarroV/decimus docs/13-walk-mini-app.md (мини-апп обхода, открыт всем аудиторам 08.10.2026, D326; кнопка «Приложение» у поля ввода, главная и настройки — 09.10.2026, D372, D373)
   - dotfiles docs/landscape.md
+  - "GarroV/decimus docs/08-deploy.md §8.21 (открытое демо, D524) и /demo на стенде, 19.10.2026"
   - "GarroV/decimus: тестовое пространство партнёра TEST (Словения) и учётка partner на проде, 15.10.2026 (D508, задача #870)"
   - GarroV/decimus progress.md (имя бота @dodo_as_bot) и getMe бота на VPS
   - "владелец, 28.09.2026: статус — в разработке"
