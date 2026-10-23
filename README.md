@@ -83,7 +83,7 @@
 Страница при открытии идёт в публичную выдачу Swarm:
 
 ```
-GET https://vbqglndbxkpmreccpqmr.supabase.co/functions/v1/swarm-api/public/roadmap/d8299ea3-6a8f-4e57-bbfb-4a9b0a53aea9
+GET https://api.swarm-team.app/functions/v1/swarm-api/public/roadmap/d8299ea3-6a8f-4e57-bbfb-4a9b0a53aea9
 ```
 
 Это доска «Vibe Coding»; её подпроекты — проекты хаба. Без авторизации и
