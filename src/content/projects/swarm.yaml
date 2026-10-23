@@ -22,12 +22,12 @@ runs_on:
   ru: Веб, Telegram, Claude Desktop (MCP) и рекордер встреч bumblebee на Mac
   en: The web, Telegram, Claude Desktop (MCP) and the bumblebee meeting recorder on a Mac
 link:
-  url: https://swarm-brain.pages.dev
+  url: https://swarm-team.app   # основной адрес с 02.10.2026 (Swarm-brain QUICK_REF; #753), прежний swarm-brain.pages.dev отвечает 301, проверено 23.10.2026
   label:
     ru: Открыть веб
     en: Open the web app
 extra_links:
-  - url: https://t.me/swarm_brain_bot   # miniapp/src/app/login/page.tsx, t.me отвечает «Swarm Bot»
+  - url: https://t.me/swarm_brain_bot   # miniapp/src/app/login/page.tsx, t.me отвечает og:title «Swarm Bot», 23.10.2026
     label:
       ru: Открыть бота
       en: Open the bot
@@ -39,14 +39,16 @@ login_steps:
   - ru: В Telegram откройте бота @swarm_brain_bot и пишите ему вопросы и заметки. Подключить Claude Desktop или рекордер bumblebee — в вебе, раздел «Настройки».
     en: In Telegram, open the @swarm_brain_bot bot and send it questions and notes. To connect Claude Desktop or the bumblebee recorder, go to Settings in the web app.
 demo:
-  url: https://swarm-brain.pages.dev/api/auth/demo?key=f4a2bc8e3401d76455aa3e9243cecc1583616b61d105cdfd
+  url: https://swarm-team.app/api/auth/demo?key=f4a2bc8e3401d76455aa3e9243cecc1583616b61d105cdfd
   note:
     ru: Демо-воркспейс без регистрации, на английском, возвращается к эталону
     en: A demo workspace with no sign-up, in English, reset to a clean state
 sources:
   - GarroV/Swarm-brain README.md («Живое демо», «Что это и зачем», «Поверхности»)
   - GarroV/Swarm-brain docs/ARCHITECTURE.md
-  - GarroV/Swarm-brain docs/QUICK_REF.md (веб — swarm-brain.pages.dev; демо-данные scripts/seed-demo.sh)
+  - GarroV/Swarm-brain docs/QUICK_REF.md (веб — swarm-team.app, прежний swarm-brain.pages.dev переадресует; демо-данные scripts/seed-demo.sh)
+  - "GarroV/Swarm-brain docs/ARCHITECTURE.md («Demo-сессия»: вход по ключу переадресуется со старого хоста на swarm-team.app)"
   - GarroV/Swarm-brain miniapp/src/app/login/page.tsx (бот @swarm_brain_bot, вход Google и Telegram, только по приглашению)
   - "28.09.2026: веб отвечает 200, демо-ссылка ставит сессию и ведёт в воркспейс"
+  - "23.10.2026: swarm-team.app отвечает 200 «Swarm Brain», демо-ссылка на нём ставит сессию и ведёт в воркспейс; t.me/swarm_brain_bot — «Swarm Bot»"
   - "владелец, 28.09.2026: статус — работает"

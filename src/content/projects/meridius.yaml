@@ -25,8 +25,8 @@ link:
   url: https://meridius.vasiliy-garro.workers.dev
 extra_links: []
 login_steps:
-  - ru: Основной способ — планшет у станции. Управляющий в кабинете нажимает «Привязать планшет» у чек-листа станции и получает четырёхзначный код. На планшете откройте ссылку, перейдите на /pair и введите код. Это делается один раз, дальше вкладка /station держит чек-лист станции открытым.
-    en: The main way is a tablet at the station. A manager clicks “Pair tablet” on the station checklist in the admin and gets a four-digit code. On the tablet, open the link, go to /pair and enter the code. You do this once; after that the /station tab keeps the station checklist open.
+  - ru: Основной способ — планшет у станции. Управляющий в кабинете нажимает «Привязать планшет» у чек-листа станции и получает четырёхзначный код. На планшете откройте ссылку, перейдите на /pair и введите код — он действует пять минут. Это делается один раз, дальше вкладка /station держит чек-лист станции открытым.
+    en: The main way is a tablet at the station. A manager clicks “Pair tablet” on the station checklist in the admin and gets a four-digit code. On the tablet, open the link, go to /pair and enter the code — it works for five minutes. You do this once; after that the /station tab keeps the station checklist open.
   - ru: Без планшета — отсканируйте QR-наклейку на станции. Чек-лист откроется без регистрации и входа.
     en: Without a tablet — scan the QR sticker at the station. The checklist opens with no sign-up or sign-in.
   - ru: Методистам и управляющим — откройте кабинет по ссылке (раздел /admin) и нажмите «Войти через Google» рабочей почтой, которую УК привязала к вашей учётке. Запасной путь — логин и пароль от УК.
@@ -37,6 +37,7 @@ sources:
   - GarroV/meridius docs/furca/blocks/auth.md (вход в кабинет)
   - GarroV/meridius deploy/README.md
   - "GarroV/meridius D176, D177: вход через Google, адрес через фронт Cloudflare (30.09.2026)"
+  - GarroV/meridius docs/furca/blocks/device.md и src/messages (подписи «Привязать планшет», «Войти через Google», срок кода 5 минут), сверка 23.10.2026
   - dotfiles docs/landscape.md
   - "владелец, 28.09.2026: статус — в разработке"
   - "владелец, 28.09.2026: основной способ работы — браузер планшета, привязанный к станции"
