@@ -1,4 +1,4 @@
-// Поведение страницы: карточки поверх страницы, копирование ссылки и лента плана.
+// Поведение страницы: карточки поверх страницы, копирование ссылки и шагов входа и лента плана.
 // DOM строится через textContent — заголовки задач приходят извне.
 import { fetchRoadmap, groupItems, parseRoadmap, type Grouped, type RoadmapResult } from '../lib/roadmap';
 import { readConfig, type HubConfig } from './config';
@@ -57,9 +57,10 @@ function wireCopy(): void {
         await navigator.clipboard.writeText(url);
         if (status) status.textContent = config.i18n.copied;
       } catch {
-        const target = btn.parentElement?.querySelector('.url');
+        const isSteps = btn.dataset.copyFail === 'steps';
+        const target = btn.closest('section')?.querySelector(isSteps ? 'ol.steps' : '.url');
         if (target) getSelection()?.selectAllChildren(target);
-        if (status) status.textContent = config.i18n.copyFailed;
+        if (status) status.textContent = isSteps ? config.i18n.copyStepsFailed : config.i18n.copyFailed;
       }
     });
   });

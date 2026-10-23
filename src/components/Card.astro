@@ -18,6 +18,7 @@ const { slug, project: p, locale, d } = Astro.props;
 const titleId = `card-${slug}-title`;
 const link = isTodo(p.link) ? null : p.link;
 const steps = isTodo(p.login_steps) ? null : p.login_steps;
+const stepsText = steps ? [p.name, ...steps.map((s, i) => `${i + 1}. ${s[locale]}`)].join('\n') : '';
 const demo = isTodo(p.demo) ? undefined : p.demo;
 const facts = [
   { label: d.audience, value: isTodo(p.audience) ? null : p.audience[locale] },
@@ -77,13 +78,21 @@ const facts = [
         <h3 class="label">{d.howToEnter}</h3>
         {
           steps ? (
-            <ol class="steps">
-              {steps.map((s) => (
-                <li>
-                  <span>{s[locale]}</span>
-                </li>
-              ))}
-            </ol>
+            <Fragment>
+              <ol class="steps">
+                {steps.map((s) => (
+                  <li>
+                    <span>{s[locale]}</span>
+                  </li>
+                ))}
+              </ol>
+              <div class="link steps-copy">
+                <button class="btn ghost" type="button" data-copy={stepsText} data-copy-fail="steps">
+                  {d.copySteps}
+                </button>
+                <span class="copy-status" data-copy-status role="status" aria-live="polite" />
+              </div>
+            </Fragment>
           ) : (
             <Pending label={d.pending} />
           )
@@ -254,6 +263,9 @@ const facts = [
     padding: 12px 14px;
     overflow-wrap: anywhere;
     user-select: all;
+  }
+  .steps-copy {
+    margin-top: 16px;
   }
   .link.extra {
     margin-top: 12px;

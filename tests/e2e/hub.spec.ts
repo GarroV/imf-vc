@@ -75,12 +75,33 @@ test.describe('с фикстурой плана', () => {
     const extra = page.locator('#card-decimus [data-extra-link]');
     await expect(extra.getByRole('link', { name: 'Открыть бота' })).toHaveAttribute('href', 'https://t.me/dodo_as_bot');
     await page.goto('./#swarm');
-    await expect(page.locator('#card-swarm [data-link]')).toHaveText('https://swarm-brain.pages.dev');
+    await expect(page.locator('#card-swarm [data-link]')).toHaveText('https://swarm-team.app');
     await expect(page.locator('#card-swarm [data-extra-link] a')).toHaveAttribute('href', 'https://t.me/swarm_brain_bot');
     await expect(page.locator('#card-swarm').getByRole('link', { name: ru.demoOpen })).toHaveAttribute(
       'href',
-      /^https:\/\/swarm-brain\.pages\.dev\/api\/auth\/demo\?key=/,
+      /^https:\/\/swarm-team\.app\/api\/auth\/demo\?key=/,
     );
+  });
+
+  test('«Скопировать инструкцию» кладёт в буфер название и пронумерованные шаги на языке страницы', async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    for (const [path, dict, expectedHead] of [
+      ['./#decimus', ru, 'Decimus\n1. '],
+      ['en/#decimus', en, 'Decimus\n1. '],
+    ] as const) {
+      await page.goto(path);
+      const card = page.locator('#card-decimus');
+      const stepCount = await card.locator('ol.steps li').count();
+      expect(stepCount).toBeGreaterThan(0);
+      await card.getByRole('button', { name: dict.copySteps, exact: true }).click();
+      await expect(card.locator('.steps-copy [data-copy-status]')).toHaveText(dict.copied);
+      const text = await page.evaluate(() => navigator.clipboard.readText());
+      const lines = text.split('\n');
+      expect(text.startsWith(expectedHead)).toBe(true);
+      expect(lines).toHaveLength(stepCount + 1);
+      const shown = await card.locator('ol.steps li span').allTextContents();
+      expect(lines.slice(1)).toEqual(shown.map((t, i) => `${i + 1}. ${t}`));
+    }
   });
 
   test('RU/EN переключается', async ({ page }) => {

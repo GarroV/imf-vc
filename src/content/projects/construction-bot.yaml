@@ -29,19 +29,21 @@ link:
     en: Open the bot
 extra_links: []
 login_steps:
-  - ru: Добавьте бота @dodo_constr_bot в страновой чат партнёра — группу с топиками. Добавить его может тот, у кого в чате есть право добавлять участников.
-    en: Add the @dodo_constr_bot bot to the partner’s country chat — a group with topics. Anyone allowed to add members to the chat can do it.
-  - ru: В топике стройки отправьте /menu@dodo_constr_bot и нажмите «➕ Добавить карточку», ответив номером задачи Битрикс24 или ссылкой на неё. То же одной командой — /add@dodo_constr_bot 42103. Подзадачи карточки бот подхватит сам.
-    en: In the construction topic, send /menu@dodo_constr_bot and tap “➕ Add a card”, replying with the Bitrix24 task number or a link to it. The same in one command — /add@dodo_constr_bot 42103. The bot picks up the card’s subtasks on its own.
-  - ru: Язык и часовой пояс бот определит сам по карточке. Поменять — /time 09:00 Белград и /lang ru (или кнопки в /menu). Что отслеживается — /list.
-    en: The bot works out the language and time zone from the card. To change them — /time 09:00 Belgrade and /lang en (or the buttons in /menu). To see what is tracked — /list.
-  - ru: Дальше всё само — выжимка приходит в 9, 11, 13, 15, 17 и 19 по местному времени, только если по карточкам что-то изменилось. Бот ответил, что карточка не найдена или нет доступа, — напишите владельцу проекта.
-    en: After that it runs on its own — a digest arrives at 9, 11, 13, 15, 17 and 19 local time, only when something changed on the cards. If the bot replies that the card is not found or there is no access, contact the project owner.
+  - ru: Добавьте бота @dodo_constr_bot в страновой чат партнёра — группу с топиками («Участники» → «Добавить участника»). Добавить его может тот, у кого в чате есть право добавлять участников.
+    en: Add the @dodo_constr_bot bot to the partner’s country chat — a group with topics (“Members” → “Add member”). Anyone allowed to add members to the chat can do it.
+  - ru: Подключить стройку — в её топике отправьте /add 42103, где 42103 — номер задачи Битрикс24 (можно вставить ссылку на задачу). Бот ответит «Отслеживаю…», подзадачи подхватит сам. Без команд — /menu → «➕ Добавить карточку» и ответить (reply) номером.
+    en: To connect a site, send /add 42103 in its topic, where 42103 is the Bitrix24 task number (a link to the task works too). The bot replies “Now tracking…” and picks up the subtasks on its own. Without commands — /menu → “➕ Add a card” and reply with the number.
+  - ru: Отключить карточку — /remove 42103 или /menu → «🗑 Убрать» и выбрать карточку. Что подключено в топике — /list.
+    en: To stop tracking a card — /remove 42103, or /menu → “🗑 Remove” and pick the card. To see what is connected in the topic — /list.
+  - ru: Язык и часовой пояс бот определит сам по карточке; поменять — кнопками в /menu. Отчёт сразу, не дожидаясь расписания, — /report.
+    en: The bot works out the language and time zone from the card; to change them use the buttons in /menu. A report right away, without waiting for the schedule — /report.
+  - ru: Дальше всё само — выжимка приходит в 9, 11, 13, 15, 17 и 19 по местному времени, только если по карточкам что-то изменилось; завершённую задачу бот снимает сам. Бот ответил, что карточка не найдена или нет доступа, — напишите владельцу проекта.
+    en: After that it runs on its own — a digest arrives at 9, 11, 13, 15, 17 and 19 local time, only when something changed on the cards; a finished task drops off by itself. If the bot replies that the card is not found or there is no access, contact the project owner.
 demo: none               # решение владельца 28.09.2026: демо боту не нужно
 sources:
   - GarroV/construction_bot README.md («Что это», «Поверхности», «Сквозной сценарий»)
   - GarroV/construction_bot locales/ru.json, locales/en.json (тексты /start, кнопки /menu)
-  - GarroV/construction_bot construction-bot-spec.md (адресные команды в группах)
-  - "MUSPELHEIM, 28.09.2026: getMe бота — @dodo_constr_bot"
+  - GarroV/construction_bot src/telegram/commands.py (_addressed_to_me — команды в группе без @, с 28.07.2026)
+  - "MUSPELHEIM, 28.09.2026: getMe бота — @dodo_constr_bot; 23.10.2026: контейнер бота работает"
   - dotfiles docs/landscape.md
   - "владелец, 28.09.2026: статус — работает; демо нет"

@@ -19,6 +19,8 @@ export const en: Dict = {
   copy: 'Copy',
   copied: 'Copied',
   copyFailed: 'Couldn’t copy — select the link by hand',
+  copySteps: 'Copy instructions',
+  copyStepsFailed: 'Couldn’t copy — select the steps by hand',
   howToEnter: 'How to get in',
   audience: 'Who it’s for',
   runsOn: 'Runs on',

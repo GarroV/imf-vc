@@ -5,6 +5,7 @@ import type { Dict } from '../i18n/ru';
 export const CLIENT_KEYS = [
   'copied',
   'copyFailed',
+  'copyStepsFailed',
   'planLoading',
   'planUnavailable',
   'planEmpty',

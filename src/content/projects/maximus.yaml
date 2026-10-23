@@ -31,13 +31,13 @@ link:
     ru: Открыть демо
     en: Open the demo
 extra_links:
-  - url: https://maximus.vasiliy-garro.workers.dev   # VPS, 09.10.2026: отвечает формой входа
+  - url: https://maximus.vasiliy-garro.workers.dev   # VPS, 09.10.2026; 23.10.2026: 302 на /login/, «MAXIMUS · Вход»
     label:
       ru: Рабочий продукт
       en: Working product
 login_steps:
-  - ru: Посмотреть продукт — в демо. Откройте ссылку и нажмите «Enter the demo» или войдите нужной ролью — бухгалтер, управляющий точки, администратор сети. Регистрации нет, демо на английском, все люди и суммы в нём выдуманы, а данные сами возвращаются к исходным.
-    en: To see the product, use the demo. Open the link and click “Enter the demo” or enter as a specific role — accountant, restaurant manager, network administrator. No sign-up; the demo is in English, every person and amount in it is invented, and the data resets on its own.
+  - ru: Посмотреть продукт — в демо. Откройте ссылку и нажмите «Enter the demo» (войдёте операционным директором) или войдите нужной ролью — бухгалтер, управляющий точки, администратор сети. Регистрации нет, демо на английском, все люди и суммы в нём выдуманы, а данные сами возвращаются к исходным.
+    en: To see the product, use the demo. Open the link and click “Enter the demo” (you enter as the operations director) or enter as a specific role — accountant, restaurant manager, network administrator. No sign-up; the demo is in English, every person and amount in it is invented, and the data resets on its own.
   - ru: Рабочий продукт открывается по второй ссылке, но войти в него можно только по приглашению — в нём персональные данные сотрудников партнёра. Приглашение отправляет администратор сети партнёра.
     en: The working product opens from the second link, but you can only sign in by invitation — it holds personal data of the partner’s staff. The invitation is sent by the partner’s network administrator.
 demo:
@@ -53,4 +53,5 @@ sources:
   - GarroV/vps-infra projects/maximus/README.md (продукт и демо на VPS, вход через Cloudflare Worker)
   - "VPS, 09.10.2026: адрес демо с ключом отвечает 200 «MAXIMUS — live demo», продукт — 200 «MAXIMUS · Вход»"
   - dotfiles docs/landscape.md
+  - "23.10.2026: демо-страница отвечает 200 «MAXIMUS — live demo», кнопки «Enter the demo», «Enter as Accountant / Unit manager / Network administrator»; продукт — 200 «MAXIMUS · Вход»"
   - "владелец, 28.09.2026: статус — в разработке; демо было"

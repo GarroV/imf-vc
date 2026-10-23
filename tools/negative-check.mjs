@@ -46,6 +46,13 @@ const MUTATIONS = [
     run: ['npx', 'playwright', 'test', '--project=desktop', '-g', 'приватный репозиторий'],
   },
   {
+    name: '«Скопировать инструкцию» копирует не шаги, а только название',
+    file: 'src/components/Card.astro',
+    find: /data-copy=\{stepsText\}/,
+    replace: 'data-copy={p.name}',
+    run: ['npx', 'playwright', 'test', '--project=desktop', '-g', 'Скопировать инструкцию'],
+  },
+  {
     name: 'в YAML проекта нет обязательного поля',
     file: 'src/content/projects/meridius.yaml',
     find: /^summary:\n(?:  .*\n)+/m,
@@ -69,8 +76,8 @@ const MUTATIONS = [
   {
     name: 'адрес продукта не открывается',
     file: 'src/content/projects/swarm.yaml',
-    find: /https:\/\/swarm-brain\.pages\.dev$/m,
-    replace: 'https://swarm-brain-nonexistent-9981.pages.dev',
+    find: /^  url: https:\/\/swarm-team\.app(?=\s)/m,
+    replace: '  url: https://swarm-brain-nonexistent-9981.pages.dev',
     run: ['node', 'tools/check-links.mjs'],
   },
 ];
