@@ -31,7 +31,11 @@ login_steps:
     en: Without a tablet — scan the QR sticker at the station. The checklist opens with no sign-up or sign-in.
   - ru: Методистам и управляющим — откройте кабинет по ссылке (раздел /admin) и нажмите «Войти через Google» рабочей почтой, которую УК привязала к вашей учётке. Запасной путь — логин и пароль от УК.
     en: Methodologists and managers — open the admin from the link (the /admin section) and click “Sign in with Google” with the work email the management company linked to your account. Login and password from the management company is the fallback.
-demo: none               # демо только локальное (npm run up)
+demo:
+  url: https://meridius-demo.vasiliy-garro.workers.dev/demo   # открытое демо, стенд /srv/meridius-demo, сброс раз в час (проверено 11.11.2026)
+  note:
+    ru: "Вход выбором роли: УК или партнёр; выдуманные пиццерии с историей за 60 дней; всё сбрасывается каждый час"
+    en: "Pick a role, HQ or partner; made-up pizzerias with 60 days of history; everything resets every hour"
 sources:
   - GarroV/meridius README.md («Три поверхности»)
   - GarroV/meridius docs/furca/blocks/auth.md (вход в кабинет)
