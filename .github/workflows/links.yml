@@ -1,6 +1,7 @@
 # Каждый день проверяет, что ссылки в карточках хаба живые (адреса продуктов, боты, демо).
-# Упал — заводит задачу «Ссылка в хабе не открывается» (или дописывает в открытую),
-# GitHub присылает письмо об упавшем прогоне. Токен — встроенный GITHUB_TOKEN, своих секретов нет.
+# Упал — прогон красный, GitHub присылает письмо, список мёртвых ссылок — в сводке прогона.
+# Задач здесь не заводит: репозиторий публичный, наши задачи живут в приватном GarroV/backlog
+# (dotfiles/claude/decisions/2026-11-15-backlog-publichnyh-repo.md).
 name: Links
 
 on:
@@ -13,7 +14,6 @@ on:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   links:
@@ -28,13 +28,7 @@ jobs:
       - name: Проверить ссылки
         id: check
         run: npm run check:links 2>&1 | tee links.log; exit "${PIPESTATUS[0]}"
-      - name: Завести или дополнить задачу
+      - name: Сводка прогона
         if: failure() && steps.check.outcome == 'failure'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          TITLE="Ссылка в хабе не открывается"
-          BODY="$(printf 'Прогон: %s\n\n```\n%s\n```\n\nОбновите карточку проекта в src/content/projects/ или почините продукт.' "$RUN_URL" "$(grep -E '✗|Мёртвых' links.log)")"
-          N=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number -q '.[0].number')
-          if [ -n "$N" ]; then gh issue comment "$N" --body "$BODY"; else gh issue create --title "$TITLE" --body "$BODY"; fi
+          { echo "### Мёртвые ссылки"; echo; echo '```'; grep -E '✗|Мёртвых' links.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
