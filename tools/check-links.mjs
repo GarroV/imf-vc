@@ -2,7 +2,7 @@
 //   npm run check:links
 // Ссылка считается живой, если отвечает кодом ниже 400 (редирект на вход — это норма).
 // Хотя бы одна мёртвая — выход с кодом 1 и список причин. По расписанию гоняет
-// .github/workflows/links.yml: упавший прогон заводит задачу в репозитории.
+// .github/workflows/links.yml: упавший прогон краснеет, список мёртвых ссылок — в сводке прогона.
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
